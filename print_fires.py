@@ -45,7 +45,8 @@ def main():
     file_name = args.file_name
     verbose = args.verbose
 
-    fires = get_column(file_name, country_column, country, result_column=result_column, verbose=verbose)
+    fires = get_column(file_name, country_column, country,
+                       result_column=result_column, verbose=verbose)
 
     print(fires)
 

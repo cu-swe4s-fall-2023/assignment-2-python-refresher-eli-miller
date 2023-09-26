@@ -1,4 +1,5 @@
-def get_column(file_name, query_column, query_value, result_column=1, verbose=False):
+def get_column(file_name, query_column, query_value, result_column=1,
+               verbose=False):
     """Get a column from a csv file based on a query value in another column
 
     Args:
@@ -24,28 +25,41 @@ def get_column(file_name, query_column, query_value, result_column=1, verbose=Fa
             if verbose:
                 # Print an overview of the file to the user
                 header = f.readline().strip().split(',')
-                print(f'Getting {header[result_column]} from {file_name} where {header[query_column]} is {query_value}')
+                print(
+                    f'Getting {header[result_column]} '
+                    f'from {file_name} '
+                    f'where {header[query_column]} '
+                    f'is {query_value}'
+                )
 
             for i_line, line in enumerate(f):
                 line = line.strip().split(',')
                 if line[query_column] == query_value:
                     return_val = line[result_column]
 
-                    # If the result is a number, convert it to an int. Catch errors
+                    # If the result is a number, convert it to an int. Catch
+                    # errors
                     try:
                         return_val = round(float(return_val))
                         result.append(return_val)
 
                     except ValueError as e:
 
-                        print(f'Could not convert {return_val} to int in column {result_column}, row {i_line}, {e}')
+                        print(
+                            f'Could not convert {return_val} '
+                            f'to int in column {result_column}, '
+                            f'row {i_line}, {e}'
+                        )
+
                         exit(1)
 
                     except Exception as e:
-                        print(f'Unknown error in column {result_column}, row {i_line}, {e}')
+                        print(
+                            f'Unknown error in column {result_column}, '
+                            f'row {i_line}, {e}'
+                        )
+
                         exit(1)
-
-
 
     except FileNotFoundError:
         print(f'Could not find file {file_name}')
