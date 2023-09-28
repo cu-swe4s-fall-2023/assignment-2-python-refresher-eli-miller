@@ -77,16 +77,20 @@ def get_country_names(filename):
     returns:
         country_names (list): list of country names
     """
+    try:
+        with open(filename, 'r') as f:
+            country_names = []
 
-    with open(filename, 'r') as f:
-        country_names = []
+            for line in f:
+                line = line.strip().split(',')
+                country_name = line[0]
 
-        for line in f:
-            line = line.strip().split(',')
-            country_name = line[0]
+                if country_name not in country_names:
+                    country_names.append(country_name)
+    except FileNotFoundError:
+        print(f'Could not find file {filename}')
+        exit(1)
 
-            if country_name not in country_names:
-                country_names.append(country_name)
 
     return country_names
 
