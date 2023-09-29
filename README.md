@@ -2,13 +2,16 @@
 
 _Functionality to read in the AGRO Food dataset and extract information_
 
+This should demonstrate one successful and two unsuccessful runs of the script.
+
+
 ## Installation Instructions
 1. Clone the repository
 
 ```git clone https://github.com/cu-swe4s-fall-2023/assignment-2-python-refresher-eli-miller```
 
-2. Get the `Agrofood_co2_emissions.csv` from Google Drive
-3. Change in the source directory
+2. Get the `Agrofood_co2_emissions.csv` from Google Drive and place it in the `src/` directory
+3. Navigate into the source directory
 
 ```cd src```
 4. Run the script using the bash file
