@@ -44,4 +44,17 @@ python print_fires.py --country "United States of America" --country_column 0 --
 the input parameter for `get_column`.
 
 
+# Testing
+
+tests should be run from the appropriate test directory. For example:
+
+change directory to run unit tests
+
+```cd tests/unit```
+
+Then run the test file
+
+```python test_my_utils.py```
+
+
 
