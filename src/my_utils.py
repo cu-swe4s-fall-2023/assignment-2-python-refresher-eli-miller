@@ -1,5 +1,5 @@
 def get_column(file_name, query_column, query_value, result_column=1,
-               verbose=False):
+               verbose=False, ):
     """Get a column from a csv file based on a query value in another column
 
     Args:
@@ -13,9 +13,10 @@ def get_column(file_name, query_column, query_value, result_column=1,
     """
     # Check if the provided country is in the file
     country_names = get_country_names(file_name)
+
     if query_value not in country_names:
         print(f'{query_value} not in {file_name}.')
-        exit(1)
+        return None
     # Catch file not found errors
     try:
         with open(file_name, 'r') as f:
@@ -51,7 +52,7 @@ def get_column(file_name, query_column, query_value, result_column=1,
                             f'row {i_line}, {e}'
                         )
 
-                        exit(1)
+                        return None
 
                     except Exception as e:
                         print(
@@ -59,11 +60,11 @@ def get_column(file_name, query_column, query_value, result_column=1,
                             f'row {i_line}, {e}'
                         )
 
-                        exit(1)
+                        return None
 
     except FileNotFoundError:
         print(f'Could not find file {file_name}')
-        exit(1)
+        return None
 
     return result
 
@@ -89,8 +90,7 @@ def get_country_names(filename):
                     country_names.append(country_name)
     except FileNotFoundError:
         print(f'Could not find file {filename}')
-        exit(1)
-
+        return None
 
     return country_names
 
@@ -134,3 +134,45 @@ def get_col_means(filename):
         col_means = np.mean(col_means)
     return col_means
 
+
+def mean(numbers):
+    """Calculate the mean of a list of numbers
+
+    Args:
+        numbers (list): List of numbers
+
+    Returns:
+        mean (float): Mean of the list of numbers
+    """
+    return sum(numbers) / len(numbers)
+
+
+def median(numbers):
+    """Calculate the median of a list of numbers
+
+    Args:
+        numbers (list): List of numbers
+
+    Returns:
+        median (float): Median of the list of numbers
+            """
+    numbers.sort()
+    if len(numbers) % 2 == 0:
+        return (numbers[int(len(numbers) / 2)] + numbers[
+            int(len(numbers) / 2) - 1]) / 2
+    else:
+        return numbers[int(len(numbers) / 2)]
+
+
+def std(numbers):
+    """
+    Calculate the standard deviation of a list of numbers
+
+    Args:
+        numbers (list): List of numbers
+
+    Returns:
+        std (float): Standard deviation of the list of numbers
+    """
+
+    return mean([(x - mean(numbers)) ** 2 for x in numbers]) ** 0.5
