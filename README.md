@@ -1,4 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/oQi7O4AA)
+[![Unit Tests](https://github.com/cu-swe4s-fall-2023/assignment-2-python-refresher-eli-miller/actions/workflows/unit_test.yml/badge.svg?branch=master)](https://github.com/cu-swe4s-fall-2023/assignment-2-python-refresher-eli-miller/actions/workflows/unit_test.yml)
 
 _Functionality to read in the AGRO Food dataset and extract information_
 
