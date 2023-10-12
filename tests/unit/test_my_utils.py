@@ -10,7 +10,7 @@ import my_utils
 
 class Test(TestCase):
     def test_get_column_happy(self):
-        result = my_utils.get_column('test_data.csv',
+        result = my_utils.get_column('../test_data.csv',
                                      query_column=0,
                                      query_value="China",
                                      result_column=3, )
@@ -18,7 +18,7 @@ class Test(TestCase):
         self.assertIsNotNone(result)
 
     def test_get_country_names_happy(self):
-        names = my_utils.get_country_names('test_data.csv')
+        names = my_utils.get_country_names('../test_data.csv')
         # assert that all names are unique
         self.assertEquals(len(set(names)) / len(names), 1)
 

@@ -1,5 +1,5 @@
 import argparse
-
+import sys
 import my_utils
 
 
@@ -69,7 +69,7 @@ def main():
         print(
             ' Operation not implemented in my_utils. Available operations are '
             '"mean", "median", "std"')
-        exit(1)
+        sys.exit(1)
 
 
 if __name__ == '__main__':
