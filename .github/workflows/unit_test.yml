@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          cd test/unit
+          cd tests/unit
           python -m unittest test_my_utils
 
 
@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          cd test/function
+          cd tests/function
           bash test_calc.sh
 
   run_style_checks: # using pycodestyle
