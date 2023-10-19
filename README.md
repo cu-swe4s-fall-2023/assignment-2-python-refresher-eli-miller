@@ -1,10 +1,10 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/oQi7O4AA)
-[![Unit Tests](https://github.com/cu-swe4s-fall-2023/assignment-2-python-refresher-eli-miller/actions/workflows/unit_test.yml/badge.svg?branch=master)](https://github.com/cu-swe4s-fall-2023/assignment-2-python-refresher-eli-miller/actions/workflows/unit_test.yml)
+[![All Tests](https://github.com/cu-swe4s-fall-2023/assignment-2-python-refresher-eli-miller/actions/workflows
+/unit_test.yml/badge.svg?branch=master)](https://github.com/cu-swe4s-fall-2023/assignment-2-python-refresher-eli-miller/actions/workflows/unit_test.yml)
 
 _Functionality to read in the AGRO Food dataset and extract information_
 
 # Analysis of CO<sub>2</sub> Emissions from Fires
-
 ## Introduction
 
 Previous analysis shows that some major CO<sub>2</sub> emission sources are from fires. Further, three different
@@ -77,7 +77,7 @@ Command line arguments:
 
 * `--country_column`  - The column number of the country column
 * `--country` - The country to query
-* `--result_column` - The column number of the column to return values from
+* `--result_column` - The column ~~number~~ name (starting in v5.0) of the column to return values from
 * `--file_name` - The path to the dataset file.
     * This script will run from /src/ so ensure to use relative paths to get to the dataset.
 * `--verbose` (optional) - Print out what the function is doing to the user
