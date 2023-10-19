@@ -19,8 +19,8 @@ def main():
                         )
 
     parser.add_argument('--result_column',
-                        type=int,
-                        help='Column number for results',
+                        type=str,
+                        help='Column name for results',
                         required=True
                         )
 
@@ -47,7 +47,7 @@ def main():
 
     country = args.country
     country_column = args.country_column
-    result_column = args.result_column
+    result_column = my_utils.get_column_index(args.result_column)
     file_name = args.file_name
     verbose = args.verbose
     operation = args.operation
@@ -69,6 +69,7 @@ def main():
         print(
             ' Operation not implemented in my_utils. Available operations are '
             '"mean", "median", "std"')
+        return None
         sys.exit(1)
 
 

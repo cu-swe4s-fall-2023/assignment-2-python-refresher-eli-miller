@@ -176,3 +176,21 @@ def std(numbers):
     """
 
     return mean([(x - mean(numbers)) ** 2 for x in numbers]) ** 0.5
+
+
+def get_column_index(col_name, filename='Agrofood_co2_emission.csv'):
+    '''
+    Find which column a given column name is in
+
+    Args:
+        col_name (str): Name of the column to search for
+
+    Returns:
+        col_index (int): Index of the column
+    '''
+
+    col_names = get_col_names(filename)
+
+    for i, name in enumerate(col_names):
+        if name == col_name:
+            return i

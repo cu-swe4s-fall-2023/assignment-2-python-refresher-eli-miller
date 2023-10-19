@@ -1,10 +1,10 @@
-name: Unit Tests
+name: All Tests
 
 on:
   pull_request:
     branches:
-        - main
-        - master
+      - main
+      - master
   push:
     branches:
       - "*"
@@ -21,6 +21,7 @@ jobs:
 
 
   run_func_tests:
+    #TODO: Add micro-mamba and install matplotlib
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -28,6 +29,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          pip install matplotlib
+          pip install pandas
           cd tests/function
           bash test_calc.sh
 
