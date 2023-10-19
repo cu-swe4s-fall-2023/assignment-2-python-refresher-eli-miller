@@ -3,8 +3,6 @@
 
 _Functionality to read in the AGRO Food dataset and extract information_
 
-This should demonstrate one successful and two unsuccessful runs of the script.
-
 
 ## Installation Instructions
 1. Clone the repository

@@ -13,5 +13,8 @@ python print_fires.py --country "United States of America" --country_column 0 --
 assert_exit_code 0
 #TODO: This is wrong but leave it for now to get CI working
 
+run test_plot_data
+python plot_data.py
+
 
 

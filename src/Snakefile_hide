@@ -1,0 +1,29 @@
+import os
+import my_utils
+
+# For each country, plot the data for each column in a plot
+# use get_fires to save the data to a text file
+# Then use plot_data to plot the data
+
+countries = ['United States of America',]
+             # 'Australia',
+             # 'Indonesia',
+             # 'China']
+
+columns = ['Savanna fires',]
+           # 'Rice Cultivation']
+
+rule all:
+    input:
+        expand("data/{country}_{column}.txt", country=countries, column=columns)
+
+rule get_data:
+    output:
+        expand("data/{country}_{column}.txt",country=countries,column=columns)
+    shell:
+        '''
+         i_return = python my_utils.get_col_index({country})
+        python data = print_fires.py -- country {country} --country_column {column} --result_column i_return
+        python data.to_csv("data/{country} + "_" + {column}.txt")
+        '''
+
