@@ -26,7 +26,6 @@ parser.add_argument('--label',
                     required=False
                     )
 
-
 args = parser.parse_args()
 
 data = args.data
@@ -41,11 +40,9 @@ with open(data, 'r') as f:
     y = f.read().strip('[]\n').split(',')
     y = [float(i) for i in y]
 
-
 plt.plot(y)
 plt.title(data.split('/')[-1].split('_')[0])
 plt.xlabel('index')
 plt.ylabel(label)
 
 plt.savefig(output)
-
