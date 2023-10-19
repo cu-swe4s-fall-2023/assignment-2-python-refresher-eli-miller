@@ -46,5 +46,6 @@ plt.plot(y)
 plt.title(data.split('/')[-1].split('_')[0])
 plt.xlabel('index')
 plt.ylabel(label)
+
 plt.savefig(output)
 
