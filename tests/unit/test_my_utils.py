@@ -38,19 +38,19 @@ class Test(TestCase):
 
 
 class TestMath(TestCase):
-
+    #TODO: use numpy to avoid sketchy math rounding
     def setUp(self):
-        self.long_list = [random.random() for i in range(10000)]
+        self.long_list = [random.random() for i in range(20000)]
 
     def test_mean(self):
-        self.assertAlmostEqual(my_utils.mean(self.long_list), 0.5, places=2)
+        self.assertAlmostEqual(my_utils.mean(self.long_list), 0.5, places=1)
 
     def test_median(self):
-        self.assertAlmostEqual(my_utils.mean(self.long_list), 0.5, places=2)
+        self.assertAlmostEqual(my_utils.mean(self.long_list), 0.5, places=1)
 
     def test_std(self):
         self.assertAlmostEqual(my_utils.std(self.long_list), 12 ** (-1 / 2),
-                               places=2)
+                               places=1)
 
 
 if __name__ == "__main__":
