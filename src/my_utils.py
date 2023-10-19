@@ -194,6 +194,3 @@ def get_column_index(col_name, filename='Agrofood_co2_emission.csv'):
     for i, name in enumerate(col_names):
         if name == col_name:
             return i
-
-
-
