@@ -11,7 +11,7 @@ import my_utils
 class Test(TestCase):
 
     def setUp(self):
-        self.path_to_test_data = '../../src/Agrofood_co2_emission.csv'
+        self.path_to_test_data = '../test_data.csv'
 
     def test_get_column_happy(self):
         result = my_utils.get_column(self.path_to_test_data,

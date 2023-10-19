@@ -30,6 +30,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           pip install matplotlib
+          pip install pandas
           cd tests/function
           bash test_calc.sh
 
