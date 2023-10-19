@@ -2,6 +2,59 @@
 [![Unit Tests](https://github.com/cu-swe4s-fall-2023/assignment-2-python-refresher-eli-miller/actions/workflows/unit_test.yml/badge.svg?branch=master)](https://github.com/cu-swe4s-fall-2023/assignment-2-python-refresher-eli-miller/actions/workflows/unit_test.yml)
 
 _Functionality to read in the AGRO Food dataset and extract information_
+# Analysis of CO<sub>2</sub> Emissions from Fires
+
+## Introduction
+Previous analysis shows that some major CO<sub>2</sub> emission sources are from fires. Further, three different 
+countries are the leader in three major catagoreys of emission: Savanna Fires, Forest Fires, and rice cultivation. 
+This analysis aims to understand the causes of these maximum values and if they are due to outliers in the data or 
+overall trends of emission by countries.
+
+Emission Catagory | Country | CO<sub>2</sub> Emissions (unkn)
+--- | --- | ---
+Savanna Fires | Australia | 114616.4011
+Forest Fires | Indonesia | 52227.6306
+Rice Cultivation | China | 164915.2556
+
+
+## Methods
+The dataset used for this analysis is the AGRO Food dataset. For each country and emission catagorey listed above, 
+we produce a plot of the CO<sub>2</sub> emissions over time. Plots are then analyszed to understand if the maximum 
+values are due to outliers or overall trends.
+
+
+## Results
+### Savanna Fires
+![Savanna Fires](src/plots/Australia_Savanna fires.png)
+![Savanna Fires](src/plots/China_Savanna fires.png)
+
+We see that the maximum value for Australia may be due to an outlier in the data, however the savanna fires in China 
+are much lower overall. This is likely due to the large amount of land in Australia that is savanna compared to China. 
+
+### Forest Fires
+![Forest Fires](src/plots/Indonesia_Forest fires.png)
+![Forest Fires](src/plots/China_Forest fires.png)
+
+We see that the maximum value for Indonesia is clearly due to an outlier in the data. Additionally, the overall 
+emissions in Indonesia are much higher than China. This is likely due to the large amount of land in Indonesia that 
+is forest compared to China.
+
+### Rice Cultivation
+
+![Rice Cultivation](src/plots/China_Rice cultivation.png)
+![Rice Cultivation](src/plots/Indonesia_Rice cultivation.png)
+![Rice Cultivation](src/plots/Australia_Rice cultivation.png)
+
+Unlike the other two categories, the maximum emissions from rice cultivation are due to an overall inceasing trend 
+in the data. This pattern is seen in all countries. This highlights the difference in the causes of CO<sub>2</sub> 
+from sporadic events, such as fires, and continuous events, such as rice cultivation.
+
+
+
+
+
+
+
 
 
 ## Installation Instructions
