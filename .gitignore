@@ -3,3 +3,5 @@
 
 # Ignore all __pythoncache__ files
 __pycache__
+
+.snakemake/

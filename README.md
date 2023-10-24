@@ -42,7 +42,7 @@ are much lower overall. This is likely due to the large amount of land in Austra
 We see that the maximum value for Indonesia is clearly due to an outlier in the data. Additionally, the overall
 emissions in Indonesia are much higher than China. This is likely due to the large amount of land in Indonesia that
 is forest compared to China.
-
+q
 ### Rice Cultivation
 
 ![Rice Cultivation](src/plots/China_Rice cultivation.png)

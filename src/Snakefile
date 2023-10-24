@@ -1,0 +1,53 @@
+import os
+import my_utils
+
+# For each country, plot the data for each column in a plot
+# use get_fires to save the data to a text file
+# Then use plot_data to plot the data
+
+
+countries = ['Australia',
+             'Indonesia',
+             'China']
+
+columns = ['Savanna fires',
+           'Rice Cultivation',
+           'Forest fires']
+
+
+rule all:
+    input:
+        [expand("plots/{country}_{column}.png",country=countries,column=columns),
+         "Agrofood_co2_emission.csv"]
+
+
+rule download_data:
+    output:
+        "Agrofood_co2_emission.csv"
+    shell:
+        '''
+         wget -O Agrofood_co2_emission.csv 'https://docs.google.com/uc?export=download&id=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr'
+        '''
+
+rule plot_data:
+    input:
+        expand("data/{country}_{column}.txt",country=countries,column=columns)
+    output:
+        "plots/{country}_{column}.png"
+
+    shell:
+        '''
+        python plot_data.py --data "data/{wildcards.country}_{wildcards.column}.txt" --output "plots/{wildcards.country}_{wildcards.column}.png" --label "{wildcards.column}"
+        '''
+
+rule get_data:
+    output:
+        "data/{country}_{column}.txt"
+    shell:
+        '''
+        python print_fires.py --country {wildcards.country} --country_column 0 --result_column "{wildcards.column}" > "data/{wildcards.country}_{wildcards.column}.txt"
+
+        '''
+    # Get the index of the column using my_utils.get_column_index
+    #         python print_fires.py --country {wildcards.country} --country_column 0 --result_column {my_utils.get_column_index(wildcards.column)} > "data/{wildcards.country}_{wildcards.column}.txt"
+    # python print_fires.py --country {wildcards.country} --country_column 0 --result_column 3 > "data/{wildcards.country}_{wildcards.column}.txt"
